@@ -2,6 +2,7 @@ import React from "react";
 import './Header.style.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -14,14 +15,16 @@ function Header() {
             </div>
             <div className="header__nav">
                 <div className="navBar__option">
-                    <span className="navBar__optionOne">fit</span>
-                    <span className="navBar__optionTwo">prime</span>
+                    <span className="navBar__optionOne header__fit">fit</span>
+                    <span className="navBar__optionTwo header__fit">prime</span>
                 </div>
 
-                <div className="navBar__option">
-                    <span className="navBar__optionOne">Hello,</span>
-                    <span className="navBar__optionTwo">Sign In</span>
-                </div>
+                <Link to={'signin'}>
+                    <div className="navBar__option">
+                        <span className="header-text">Hello,</span>
+                        <span className="header-sign">Sign In</span>
+                    </div>
+                </Link>
 
                 <div className="navBar__option">
                     <span className="navBar__optionOne">Return</span>
@@ -29,8 +32,8 @@ function Header() {
                 </div>
 
                 <div className="navBar__optionBasket">
-                    <ShoppingCartOutlinedIcon className="header__cartIcon"/>
-                    <span className="navBar__optionTwo navBar__basketCount">0</span>
+                    <ShoppingCartOutlinedIcon className="Cart"/>
+                    <span className="navBar__optionTwo header__basketCount">0</span>
                 </div>
             </div>
         </div>
